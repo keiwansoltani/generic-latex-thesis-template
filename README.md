@@ -6,7 +6,7 @@ This project is a reusable, multi-file dissertation template. It demonstrates ho
 
 ## Credits
 
-This LaTeX dissertation template and accompanying user guide were developed by **Keiwan Soltani**, Ph.D. Candidate in Computer Science and Graduate Assistant at the Writing and Communication Center, under the supervision of **Dr. Jossalyn Gale**.
+This LaTeX dissertation template and accompanying user guide were developed by **Keiwan Soltani**, Ph.D. Candidate in Computer Science at **Missouri University of Science and Technology** and Graduate Assistant at the **Writing and Communication Center**, under the supervision of **Dr. Jossalyn Gale**.
 
 ## Quick Start
 
