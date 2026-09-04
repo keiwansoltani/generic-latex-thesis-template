@@ -654,4 +654,14 @@ Do not store credentials, private participant data, copyrighted source files, or
 
 ## License and Reuse
 
-Add an explicit license before publishing this template on GitHub. The document class and bibliography style may have their own license or distribution terms; review those files and their source before redistributing them. A repository license for the surrounding example content does not automatically override third-party terms.
+Except where otherwise noted, the original template structure, example files, documentation, and other materials developed for this repository by **Keiwan Soltani** are released under the [MIT License](LICENSE).
+
+You are welcome to use, modify, and redistribute these materials in accordance with the terms of the MIT License.
+
+### Third-Party Files
+
+The files `mstogs.cls` and `mstogs.bst` originated from an institution-specific LaTeX formatting system and are not necessarily covered by the MIT License applied to the original materials in this repository. These files may be subject to separate copyright, licensing, or redistribution terms.
+
+Users should review the original source and applicable licensing terms for these files before redistributing or modifying them.
+
+The inclusion of third-party files in this repository does not transfer ownership of those files or override any existing copyright or licensing terms.
