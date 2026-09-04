@@ -1,0 +1,43 @@
+\section{Role of a Literature Review}
+
+A literature review does more than list sources. It establishes the scholarly conversation, defines important concepts, compares approaches, identifies disagreement, and shows why the dissertation's research problem matters. The review should support the argument developed in the later chapters rather than functioning as an isolated catalog.
+
+In a LaTeX project, citations are stored in \texttt{ThesisRef.bib}. A source is cited by its BibTeX key. For example, \verb|\cite{lamport1994latex}| produces a citation to Lamport's LaTeX guide~\cite{lamport1994latex}. Multiple sources can be cited together, as illustrated by references on document preparation and research design~\cite{mittelbach2023latex,booth2016craft}.
+
+\section{Organizing Scholarship by Theme}
+
+Thematic organization usually produces a stronger synthesis than discussing one article at a time. Table~\ref{tab:review-matrix} shows a small literature-review matrix. In an actual project, the writer can expand the dimensions or maintain a larger version outside the dissertation while presenting only the relevant synthesis in the chapter.
+
+\begin{table}[ht]
+\centering
+\caption{Example matrix for organizing a literature review.}
+\label{tab:review-matrix}
+\footnotesize
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{l|ccc}
+\hline
+\textbf{Theme} & \textbf{Typical Question} & \textbf{Evidence} & \textbf{Possible Gap} \\
+\hline
+Theory       & How is the concept defined? & Conceptual arguments & Definitions are inconsistent \\
+Methods      & How has the problem been studied? & Experiments and cases & Limited populations or settings \\
+Evaluation   & Which outcomes are measured? & Quantitative and qualitative results & Measures omit an important outcome \\
+Application  & Where is the approach used? & Field studies and artifacts & Transferability remains uncertain \\
+\hline
+\end{tabular}}
+\end{table}
+
+\section{From Summary to Synthesis}
+
+Source-by-source summary answers what each author said. Synthesis instead compares sources around a shared issue. A useful synthesis paragraph often performs four moves: it states the theme, identifies a pattern across sources, explains an important difference or limitation, and connects that pattern to the dissertation's research need.
+
+For example, technical guides consistently emphasize separating logical structure from visual formatting~\cite{knuth1984texbook,lamport1994latex}. However, a dissertation project adds institutional constraints, multiple chapter files, and discipline-specific evidence. This difference motivates a project structure that combines a local graduate-school class file with modular content and reusable examples.
+
+\section{Establishing the Research Gap}
+
+A research gap should follow from the reviewed evidence. Common gaps include an unresolved contradiction, an untested context, an overlooked population, a missing comparison, an inadequate measurement strategy, or a design problem for which existing approaches are insufficient. Avoid claiming that ``no research exists'' unless a systematic search supports that statement.
+
+The final section of a literature review should lead directly to the dissertation. It can restate the most important limitations in prior work, define the specific opportunity addressed, and explain how the next chapter responds. In this template, Chapter~\ref{ch:paper1} turns the organizational problem into a simple research model.
+
+\section{Managing References}
+
+Each BibTeX entry requires a unique key and fields appropriate to its type. Book entries normally include author, title, publisher, and year. Article entries commonly include author, title, journal, volume, issue, pages, year, and DOI. Consistent keys such as \texttt{authorYEARkeyword} make references easier to locate. After adding or changing citations, compile enough times for BibTeX and LaTeX to resolve the bibliography and all citation numbers.

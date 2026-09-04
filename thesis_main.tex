@@ -1,0 +1,142 @@
+
+%%################################################################
+% LaTeX dissertation template developed by Keiwan Soltani,       #
+% Ph.D. Candidate in Computer Science and Graduate Assistant     #
+% at the Writing and Communication Center,                       #
+% with the support of Dr. Jossalyn Gale.                         #
+%%################################################################
+
+% Compile this file to build the complete dissertation.
+\documentclass[12pt]{mstogs}
+\doublespacing
+% Prevent fancyhdr warnings while preserving the class's text-block position.
+\setlength{\headheight}{14.5pt}
+\addtolength{\topmargin}{-5.5pt}
+
+% Bibliography and citations
+\usepackage[numbers,sort]{natbib}
+\setlength{\bibhang}{0.5in}
+
+% Tables, figures, and graphics
+\usepackage[final]{graphicx}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{rotating}
+
+% Mathematics, theorems, and algorithms
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\SetKwInput{KwIn}{Input}
+\SetKwInput{KwOut}{Output}
+\SetKw{KwRet}{Return}
+\SetAlgoNlRelativeSize{-1} 
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+% Diagrams, plots, standalone figures, and colors
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage[subpreambles=false]{standalone}
+\usepackage{xcolor}
+
+% Symbols, links, utilities, and sample text
+\usepackage[noprefix]{nomencl}
+\usepackage[hyphens]{url}
+\usepackage{comment}
+\usepackage{pifont}
+\usepackage[nopar]{lipsum}
+
+\renewcommand{\nompreamble}{%
+\hspace*{-0.50in}\makebox[1.0in][l]{Symbol} Description}
+\renewcommand{\nomlabelwidth}{1.0in}
+\usepackage[table]{xcolor}
+
+\begin{document}
+
+% Choose MS or PhD according to the degree.
+\begin{ThesisTitlePage}{PhD}
+\author{\MakeUppercase{Student Name}}
+\thesistitle{\MakeUppercase{A General Demonstration of Thesis Writing with LaTeX}}
+\department{Department Name}
+\ThesisAdvisor{Advisor Name, Advisor}
+\ThesisCommittee{%
+Committee Member One\\%
+Committee Member Two\\%
+Committee Member Three\\
+Committee Member Four}
+\graddate{20XX}
+\end{ThesisTitlePage}
+
+\copyrightyear{20XX}
+\ThesisCopyrightPage{true}
+
+\begin{ThesisAbstract}
+\input{abstract}
+\end{ThesisAbstract}
+
+\begin{ThesisAcknowledgment}
+\input{acknowledgement}
+\end{ThesisAcknowledgment}
+
+\begin{ThesisFrontMatter}
+\tableofcontents
+\listoffigures
+\listoftables
+\listofsymbols{false}
+\end{ThesisFrontMatter}
+
+\begin{ThesisBody}
+
+\ThesisBodyChapter{Introduction}
+\label{ch:introduction}
+\input{Introduction/main}
+
+\ThesisBodyChapter{Literature Review}
+\label{ch:literature_review}
+\input{Literature_Review/main}
+
+\ThesisBodyChapter{Example Study I: Research Design and Mathematical Modeling}
+\label{ch:paper1}
+\input{paper1/main}
+
+\ThesisBodyChapter{Example Study II: Algorithms and Theoretical Analysis}
+\label{ch:paper2}
+\input{paper2/main}
+
+\ThesisBodyChapter{Example Study III: Experimental Evaluation}
+\label{ch:paper3}
+\input{paper3/main}
+
+\ThesisBodyChapter{Conclusions and Future Research Directions}
+\label{ch:conclusion}
+\input{Conclusion/main}
+
+\end{ThesisBody}
+
+\begin{ThesisAppendix}{one}{false}{false}
+\ThesisAppendixChapter{Publications}
+\input{publications}
+\end{ThesisAppendix}
+
+\begin{ThesisBibliography}{REFERENCES}
+\bibliographystyle{unsrtnat}
+\singlespacing
+\bibliography{ThesisRef}
+\end{ThesisBibliography}
+
+\begin{Vita}
+\input{vita}
+\end{Vita}
+
+\end{document}

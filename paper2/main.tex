@@ -1,0 +1,71 @@
+\section{Chapter Overview}
+
+Some dissertations need to present a computational procedure and establish properties of that procedure. This chapter demonstrates a numbered algorithm float together with theorem, lemma, corollary, and proof environments. The procedure and claims are intentionally simple so that the LaTeX structure remains the focus.
+
+\section{Example Algorithm}
+
+Suppose a researcher must select the best candidate from a finite set using the weighted score in Equation~\eqref{eq:weighted-score}. Algorithm~\ref{alg:select-best} scans the candidates, stores the largest score observed, and returns the corresponding candidate.
+
+\begin{algorithm}[ht]
+\caption{Select the Candidate with the Largest Score}
+\label{alg:select-best}
+
+\KwIn{Candidate set $C=\{c_1,\ldots,c_n\}$ and score function $S(\cdot)$}
+\KwOut{A candidate $c^*$ with the maximum observed score}
+
+\BlankLine
+
+$c^* \leftarrow c_1$\;
+$s^* \leftarrow S(c_1)$\;
+
+\For{$i \leftarrow 2$ \KwTo $n$}{
+    $s_i \leftarrow S(c_i)$\;
+
+    \If{$s_i > s^*$}{
+        $c^* \leftarrow c_i$\;
+        $s^* \leftarrow s_i$\;
+    }
+}
+
+\KwRet{$c^*$}\;
+
+\end{algorithm}
+
+As shown in Algorithm~\ref{alg:select-best}, the procedure examines each candidate and retains the candidate with the highest score.
+Pseudocode should communicate the logic at the level readers need.
+Implementation details belong in the algorithm only when they affect correctness, reproducibility, or complexity.
+
+\section{Correctness Statement}
+
+\begin{theorem}
+\label{thm:maximum}
+Given a nonempty finite candidate set, Algorithm~\ref{alg:select-best} returns a candidate whose score is at least as large as the score of every candidate examined.
+\end{theorem}
+
+\begin{proof}
+After initialization, \(c^*\) has the largest score among the first candidate examined. Assume that after iteration \(i-1\), \(c^*\) has the largest score among \(c_1,\ldots,c_{i-1}\). During iteration \(i\), the algorithm compares \(S(c_i)\) with the stored maximum. If the new score is larger, the algorithm updates \(c^*\); otherwise, the existing candidate remains at least as good. Therefore the invariant holds after iteration \(i\). By induction, it holds after the final iteration, so the returned candidate has maximum observed score.
+\end{proof}
+
+\begin{lemma}
+After processing candidate \(c_i\), the stored value \(s^*\) equals \(\max_{1\leq j\leq i} S(c_j)\).
+\end{lemma}
+
+\begin{proof}
+The claim follows directly from the initialization and the conditional update in Algorithm~\ref{alg:select-best}.
+\end{proof}
+
+\begin{corollary}
+If exactly one candidate has the maximum score, Algorithm~\ref{alg:select-best} returns that candidate.
+\end{corollary}
+
+\section{Complexity Analysis}
+
+If evaluating \(S(c_i)\) takes constant time, the algorithm performs one pass over \(n\) candidates and therefore has time complexity \(O(n)\). It stores only the current candidate and score, so its additional space complexity is \(O(1)\). If score evaluation is more expensive, the analysis should include that cost explicitly.
+
+\section{Writing Formal Arguments}
+
+A theorem should state assumptions and conclusions precisely. The proof should explain why the conclusion follows, and the surrounding prose should tell readers why the result matters. Labels allow later chapters to refer to Theorem~\ref{thm:maximum} without manually entering a theorem number. If sections are reordered or new theorems are inserted, LaTeX updates the reference automatically.
+
+\section{Chapter Summary}
+
+This chapter demonstrated pseudocode, proofs, theorem-family environments, and complexity notation. The next chapter shows how to design and report an experimental evaluation.

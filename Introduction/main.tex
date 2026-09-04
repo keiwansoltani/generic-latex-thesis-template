@@ -1,0 +1,68 @@
+\section{Purpose of This Template}
+
+A dissertation is both a sustained research argument and a structured document. LaTeX supports that combination by separating content from formatting and by automating numbering, cross-references, citations, and lists~\cite{lamport1994latex,mittelbach2023latex}. This chapter demonstrates how to introduce a topic, define the problem, state research questions, summarize contributions, and preview the remaining chapters. The subject matter is deliberately generic so that writers can replace it with material from any discipline.
+
+The complete dissertation is compiled from \texttt{thesis\_main.tex}. Individual chapters remain in their own folders and are inserted with \verb|\input{folder/main}|. This arrangement keeps a long project readable and makes collaboration easier. For example, Chapter~\ref{ch:literature_review} demonstrates thematic synthesis, and Chapter~\ref{ch:paper3} demonstrates reporting experimental results.
+
+\section{Motivation and Problem Statement}
+
+Long academic documents contain many interacting parts: front matter, chapters, figures, tables, equations, appendices, citations, and institution-specific formatting. Managing all of these elements in one source file can make revision difficult. A modular project reduces that burden by assigning each chapter and supporting asset a predictable location.
+
+The general problem addressed by this template is therefore:
+
+\begin{quote}
+How can a dissertation project be organized so that its content remains modular while formatting, numbering, and cross-references remain consistent across the complete document?
+\end{quote}
+
+Figure~\ref{fig:thesis-workflow} presents a simple workflow. The diagram is created directly in this chapter with TikZ, so no external image file is required.
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[
+        node distance=1.5cm,
+        box/.style={rectangle, rounded corners, draw=black, fill=blue!8,
+                    text width=3.5cm, minimum height=0.9cm, align=center},
+        arrow/.style={-{Stealth[length=3mm]}, thick}
+    ]
+        \node[box] (plan) {Plan the argument and chapter structure};
+        \node[box, below=of plan] (draft) {Draft content in separate \texttt{.tex} files};
+        \node[box, below=of draft] (connect) {Add labels, citations, figures, and tables};
+        \node[box, below=of connect] (compile) {Compile \texttt{thesis\_main.tex} and review};
+        \draw[arrow] (plan) -- (draft);
+        \draw[arrow] (draft) -- (connect);
+        \draw[arrow] (connect) -- (compile);
+    \end{tikzpicture}
+    \caption{A generic dissertation-development workflow created with TikZ.}
+    \label{fig:thesis-workflow}
+\end{figure}
+
+\section{Example Research Questions}
+
+Research questions should be specific enough to guide analysis and broad enough to support a meaningful contribution~\cite{booth2016craft}. A template dissertation might use questions such as:
+
+\begin{enumerate}
+    \item How does the proposed approach compare with an established baseline?
+    \item Which design factors most strongly influence the measured outcome?
+    \item Under what conditions do the findings remain valid?
+\end{enumerate}
+
+Replace these examples with questions that match the problem statement, methods, and evidence in the actual dissertation.
+
+\section{Example Contributions}
+
+A contribution statement tells readers what the dissertation adds. Depending on the discipline, contributions may include a theory, framework, dataset, method, artifact, empirical finding, or design recommendation. A concise list can make the scope visible:
+
+\begin{itemize}
+    \item a clearly defined research problem and conceptual framework;
+    \item a reproducible method for collecting and analyzing evidence;
+    \item an evaluation that compares alternatives using appropriate measures; and
+    \item an interpretation of findings, limitations, and implications.
+\end{itemize}
+
+\section{Organization of the Dissertation}
+
+Chapter~\ref{ch:literature_review} explains how prior scholarship can be organized into themes and a research gap. Chapter~\ref{ch:paper1} provides examples of a conceptual model, an equation, a table, and an externally compiled TikZ figure. Chapter~\ref{ch:paper2} demonstrates pseudocode, theorem environments, and formal reasoning. Chapter~\ref{ch:paper3} illustrates experimental design and data visualization. Finally, Chapter~\ref{ch:conclusion} summarizes the template and shows how to discuss limitations and future work.
+
+The project also demonstrates symbols. For example, \(n\) denotes the number of observations and \(\bar{x}\) denotes a sample mean.
+\nomenclature{$n$}{Number of observations}
+\nomenclature{$\bar{x}$}{Sample mean}
